@@ -1,13 +1,15 @@
 ---
 company: "USCAN Technologies"
-role: "TODO role title"
-when: "TODO dates"
-where: ""
-summary: "TODO one line on what you did."
-tools: []
+role: "IT Technician"
+when: "2016–2021"
+where: "Toronto, ON"
+summary: "Remote support and network installs at my dad's IT company, part-time through high school."
+tools: ["TeamViewer", "Jira", "CAT6", "VoIP"]
 order: 8
-draft: true # fill in the TODOs above, then set to false to publish
-todo: "Write the page: The job (team, what, why) / What I did (2-3 things, numbers) / What I took from it."
+todo: "Optional: add a line on what growing up in a family IT business taught you."
 ---
 
-TODO one line on what you did.
+My dad's IT company, where I worked part-time all through high school.
+
+- Troubleshot client software issues over TeamViewer and Remote Desktop, with tickets tracked in Jira.
+- Worked cabling contracts in office and industrial buildings: terminated CAT6 at the wall plate, installed patch panels and server racks, and set up VoIP phones.
