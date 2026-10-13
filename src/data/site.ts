@@ -19,8 +19,8 @@ export const site = {
   // Put image files in public/photos/ and set src to "/photos/<file>". Empty src shows a placeholder.
   photos: [
     { src: "/photos/porto.jpg", alt: "Me by the Douro river in Porto" },
+    { src: "/photos/denmark.jpg", alt: "Celebrating with friends in Denmark" },
     { src: "/photos/shopify.jpg", alt: "Me at the Shopify office" },
-    { src: "/photos/waterloo.jpg", alt: "Graduating from the University of Waterloo" },
   ],
 
   // Put your resume at public/resume.pdf, then set this to "/resume.pdf". Empty hides the link.
