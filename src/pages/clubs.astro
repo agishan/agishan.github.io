@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import { involvement } from "../data/site";
+---
+<Base title="Extracurriculars & volunteering" section="clubs">
+  <div class="page">
+    <p class="lead">Extracurriculars and volunteering: the clubs I've run, built for, or just showed up to.</p>
+    {involvement.map((g) => (
+      <section>
+        <h2 class="k">{g.group}</h2>
+        <ul class="rows jobs">
+          {g.items.map((i) => (
+            <li>
+              <span class="when">{i.when}</span>
+              <div class="what">
+                <b>{i.org}</b>
+                <span class="role">{i.role}</span>
+                {i.what && <small>{i.what}</small>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>

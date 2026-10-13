@@ -19,7 +19,7 @@ export const site = {
   // Put image files in public/photos/ and set src to "/photos/<file>". Empty src shows a placeholder.
   photos: [
     { src: "/photos/porto.jpg", alt: "Me by the Douro river in Porto" },
-    { src: "/photos/shopify.jpg", alt: "Me with the Shopify mascot" },
+    { src: "/photos/shopify.jpg", alt: "Me at the Shopify office" },
     { src: "/photos/waterloo.jpg", alt: "Graduating from the University of Waterloo" },
   ],
 
@@ -40,3 +40,61 @@ export const reading = [
 export const cooking = [
   // { src: "/photos/ramen.jpg", name: "Tonkotsu ramen" },
 ] as { src: string; name: string }[];
+
+// Extracurriculars & volunteering page (/clubs). Groups show in this order.
+export const involvement: {
+  group: string;
+  items: { org: string; role: string; when: string; what: string; href?: string }[];
+}[] = [
+  {
+    group: "University of Waterloo",
+    items: [
+      {
+        org: "Institute of Industrial & Systems Engineers (IISE), Waterloo chapter",
+        role: "Chapter President, then Advisor",
+        when: "2023–2024",
+        what: "Restarted the chapter after a 3-year hiatus. Raised $16,000 from faculty, the department, EngSoc and private sponsors, led two delegations to the IISE national conference (we won 2 of 4 competitions), and started a first-year mentorship program, including the scripts that matched mentors to students.",
+      },
+      {
+        org: "UW Cooking Club",
+        role: "VP",
+        when: "",
+        what: "Helped run the club, and built its websites: a Django + Vue recipe and events site, then a React rebuild.",
+      },
+      {
+        org: "UW Data Science Club",
+        role: "Internals Lead",
+        when: "",
+        what: "",
+      },
+      { org: "Industry 4.0", role: "VP", when: "", what: "" },
+      { org: "Engineering Society (EngSoc)", role: "Elected representative", when: "", what: "" },
+      {
+        org: "UW Poker Club",
+        role: "Developer",
+        when: "",
+        what: "Built the club's website in TypeScript and Tailwind, including tournament logistics.",
+      },
+      { org: "UW Analytics Group for Games and Sports", role: "Member", when: "", what: "" },
+      { org: "First-year mentorship", role: "Mentor", when: "", what: "Mentored incoming first-year students." },
+      { org: "Intramurals", role: "Dodgeball, flag football", when: "", what: "" },
+    ],
+  },
+  {
+    group: "Before university",
+    items: [
+      {
+        org: "707 Royal Canadian Air Cadets",
+        role: "Squadron Warrant Officer (WO2)",
+        when: "2014–2020",
+        what: "Six years. Led a squadron-wide trip for 50 cadets on a $2,500 budget, and taught cadets of different ages everything from leadership to survival skills.",
+      },
+      {
+        org: "Father Michael McGivney AV Team",
+        role: "President",
+        when: "2018–2020",
+        what: "Ran my high school's AV team. Rebuilt admissions and team events (92% member retention), trained 25 members on the equipment, and directed a 40-student seminar series that earned Club Executive of the Month.",
+      },
+    ],
+  },
+];
