@@ -6,6 +6,6 @@ when: "2023"
 stack: ["Python", "XGBoost"]
 stats:
   - { value: "8.55%", label: "MAPE" }
-order: 5
+order: 6
 page: false # listed but not clickable; set to true once it has a write-up below
 ---
