@@ -20,7 +20,7 @@ export const site = {
   photos: [
     { src: "/photos/porto.jpg", alt: "Me by the Douro river in Porto" },
     { src: "/photos/grad-friends.jpg", alt: "Graduation day at Waterloo with friends" },
-    { src: "/photos/shopify.jpg", alt: "Me at the Shopify office" },
+    { src: "/photos/headshot.jpg", alt: "Me in a shirt and tie on campus" },
   ],
 
   // Put your resume at public/resume.pdf, then set this to "/resume.pdf". Empty hides the link.
