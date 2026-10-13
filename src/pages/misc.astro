@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import RandomWalk from "../components/RandomWalk.astro";
+import { reading, cooking } from "../data/site";
+---
+<Base title="Misc" section="misc">
+  <div class="page">
+    <p class="lead">Everything that isn't work.</p>
+
+    <section class="shelf" aria-label="Sections">
+      <a class="tile" href="#cooking">
+        <span class="art">
+          {cooking[0]
+            ? <img src={cooking[0].src} alt="" style="width:100%;height:100%;object-fit:cover" />
+            : <span class="dish">recipe<br />photo</span>}
+        </span>
+        <b>Cooking</b><small>Recipes I keep making</small>
+      </a>
+      <a class="tile" href="#reading">
+        <span class="art"><span class="books" aria-hidden="true"><i style="height:70%"></i><i style="height:92%"></i><i style="height:60%"></i><i style="height:84%"></i><i style="height:76%"></i></span></span>
+        <b>Reading</b><small>What I'm reading and what stuck</small>
+      </a>
+      <a class="tile" href="#sketches">
+        <span class="art"><RandomWalk label="Random walk preview" /></span>
+        <b>Sketches</b><small>Small generative art experiments</small>
+      </a>
+    </section>
+
+    <section id="sketches">
+      <h2 class="k">Sketches</h2>
+      <div class="sketchbox"><RandomWalk /></div>
+      <div class="sketchctl"><span>0 · Randomness / random walk</span><button type="button" data-walk-reset>Restart</button></div>
+    </section>
+
+    <section id="reading">
+      <h2 class="k">Reading</h2>
+      <ul class="rows">
+        {reading.map((b) => (
+          <li>
+            <span class={b.status === "reading" ? "when status" : "when"}>{b.status}</span>
+            <span class="what"><b>{b.title}</b><small>{b.author}{b.note && ` · ${b.note}`}</small></span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="cooking">
+      <h2 class="k">Cooking</h2>
+      {cooking.length > 0
+        ? <div class="photos">{cooking.map((c) => <img class="photo" src={c.src} alt={c.name} loading="lazy" />)}</div>
+        : <p class="now">Recipes and photos coming soon.</p>}
+    </section>
+  </div>
+</Base>

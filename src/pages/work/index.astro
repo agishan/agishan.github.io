@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { site } from "../../data/site";
+
+const jobs = (await getCollection("work", (j) => !j.data.draft)).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Work" section="work">
+  <div class="page">
+    <p class="lead">Where I've worked. Most of it is the same move: model an operational mess, then build the system that runs it.</p>
+    <section>
+      <ul class="rows jobs">
+        {jobs.map((j) => (
+          <li>
+            <span class="when">{j.data.when}</span>
+            <a class="what" href={`/work/${j.id}`}>
+              <b>{j.data.company}</b>
+              <span class="role">{j.data.role}</span>
+              <small>{j.data.summary}</small>
+              {j.data.tools.length > 0 && <span class="tags">{j.data.tools.join(" · ")}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+    {site.resume && <section class="social"><a href={site.resume}>Full resume (PDF)</a></section>}
+  </div>
+</Base>

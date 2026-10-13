@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+<Base section="about">
+  <div class="page">
+    <section class="prose">
+      <p class="lead">{site.lead}</p>
+      {site.bio.map((p) => <p>{p}</p>)}
+      {site.now && <p class="now"><b>Now:</b> {site.now}</p>}
+    </section>
+
+    <section class="photos" aria-label="Photos">
+      {site.photos.map((p) =>
+        p.src
+          ? <img class="photo" src={p.src} alt={p.alt} loading="lazy" />
+          : <div class="photo">photo · {p.alt}</div>
+      )}
+    </section>
+
+    <section class="prose">
+      <p>{site.reachOut}</p>
+    </section>
+
+    <section class="social" aria-label="Elsewhere">
+      {site.socials.map((s) => <a href={s.href} rel="me">{s.label}</a>)}
+      {site.resume && <a href={site.resume}>Resume (PDF)</a>}
+    </section>
+  </div>
+</Base>

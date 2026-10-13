@@ -1,0 +1,58 @@
+---
+// The 0_Randomness sketch: a dot that wanders one random step at a time.
+// Drawn on plain canvas so the page doesn't need to load p5.js.
+interface Props {
+  label?: string;
+}
+const { label = "A random walk: a dot wandering one random step at a time" } = Astro.props;
+---
+<canvas data-walk aria-label={label} role="img"></canvas>
+
+<script>
+  type Walker = { g: CanvasRenderingContext2D; w: number; h: number; x: number; y: number };
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  let walkers: Walker[] = [];
+
+  function setup(c: HTMLCanvasElement): Walker | null {
+    const r = c.getBoundingClientRect();
+    if (!r.width) return null;
+    const d = window.devicePixelRatio || 1;
+    c.width = r.width * d;
+    c.height = r.height * d;
+    const g = c.getContext("2d")!;
+    g.scale(d, d);
+    g.fillStyle = css("--surface");
+    g.fillRect(0, 0, r.width, r.height);
+    return { g, w: r.width, h: r.height, x: r.width / 2, y: r.height / 2 };
+  }
+
+  function tick(s: Walker) {
+    s.g.fillStyle = css("--accent");
+    s.g.globalAlpha = 0.65;
+    const a = Math.floor(Math.random() * 4);
+    s.x += a === 0 ? 2 : a === 1 ? -2 : 0;
+    s.y += a === 2 ? 2 : a === 3 ? -2 : 0;
+    s.x = Math.max(0, Math.min(s.w, s.x));
+    s.y = Math.max(0, Math.min(s.h, s.y));
+    s.g.fillRect(s.x, s.y, 2, 2);
+  }
+
+  function reset() {
+    walkers = [...document.querySelectorAll<HTMLCanvasElement>("canvas[data-walk]")]
+      .map(setup)
+      .filter((w): w is Walker => w !== null);
+    if (reduce) walkers.forEach((s) => { for (let i = 0; i < 6000; i++) tick(s); });
+  }
+
+  function loop() {
+    if (!reduce) walkers.forEach((s) => { for (let i = 0; i < 12; i++) tick(s); });
+    requestAnimationFrame(loop);
+  }
+
+  reset();
+  loop();
+  window.addEventListener("resize", reset);
+  window.addEventListener("themechange", reset);
+  document.querySelectorAll("[data-walk-reset]").forEach((b) => b.addEventListener("click", reset));
+</script>

@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const jobs = (await getCollection("work", (j) => !j.data.draft)).sort((a, b) => a.data.order - b.data.order);
+  return jobs.map((job, i) => ({
+    params: { slug: job.id },
+    props: { job, prev: jobs[i - 1], next: jobs[i + 1] },
+  }));
+}
+
+const { job, prev, next } = Astro.props;
+const { Content } = await render(job);
+const d = job.data;
+---
+<Base title={d.company} description={`${d.role} at ${d.company}. ${d.summary}`} section="work">
+  <article class="page">
+    <a class="back" href="/work">← work</a>
+    <header class="ptitle">
+      <h1>{d.company}</h1>
+      <p class="lead">{d.role}</p>
+    </header>
+    <dl class="meta">
+      <div><dt>When</dt><dd>{d.when}</dd></div>
+      {d.where && <div><dt>Where</dt><dd>{d.where}</dd></div>}
+      {d.tools.length > 0 && <div><dt>Tools</dt><dd>{d.tools.join(", ")}</dd></div>}
+    </dl>
+    <section class="prose">
+      <Content />
+    </section>
+    <nav class="pnav" aria-label="More work">
+      {prev ? <a href={`/work/${prev.id}`}>← {prev.data.company}</a> : <a href="/work">← All work</a>}
+      {next ? <a href={`/work/${next.id}`}>{next.data.company} →</a> : <a href="/work">All work →</a>}
+    </nav>
+  </article>
+</Base>
