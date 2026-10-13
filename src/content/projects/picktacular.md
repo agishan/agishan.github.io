@@ -9,6 +9,7 @@ award: "Sustainable Design Award"
 stats:
   - { value: "Deployed", label: "on the hospital network" }
   - { value: "Award", label: "Sustainable Design, MSE capstone" }
+cover: "/photos/picktacular-poster.jpg"
 order: 1
 todo: "Add a screenshot of the comparison view (public/photos/picktacular.png) under What we built. Check the wording matches what your part was."
 ---

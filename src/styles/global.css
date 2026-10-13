@@ -151,3 +151,28 @@ section[id] { scroll-margin-top: 24px; }
   .ptitle h1 { font-size: 25px; }
   .tile small { display: none; }
 }
+
+/* Hover */
+a, .ptile > b, .rows a.what b { transition: color .15s ease, text-decoration-color .15s ease; }
+nav.links a { position: relative; }
+nav.links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+nav.links a:hover::after { transform: scaleX(1); }
+nav.links a[aria-current="page"] { text-decoration: none; }
+nav.links a[aria-current="page"]::after { transform: scaleX(1); background: var(--rule); }
+
+img.photo { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+img.photo:hover { transform: translateY(-4px) rotate(-1.5deg); box-shadow: 0 10px 24px -12px rgb(0 0 0 / .35); border-color: var(--accent); }
+img.photo:nth-child(2):hover { transform: translateY(-4px) rotate(1deg); }
+img.photo:nth-child(3):hover { transform: translateY(-4px) rotate(1.5deg); }
+
+.ptile .art img { transition: transform .35s ease; }
+a.ptile:hover .art img { transform: scale(1.04); }
+a.ptile > b::after, .rows a.what b::after { display: inline-block; transition: transform .2s ease, color .2s ease; }
+a.ptile:hover > b::after, .rows a.what:hover b::after { transform: translateX(4px); color: var(--accent); }
+.rows a.what:hover .role { color: var(--ink); }
+.back, .pnav a { transition: color .15s ease, transform .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  img.photo:hover, a.ptile:hover .art img { transform: none; }
+}
