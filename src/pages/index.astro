@@ -13,7 +13,14 @@ import { site } from "../data/site";
     <section class="photos" aria-label="Photos">
       {site.photos.map((p) =>
         p.src
-          ? <img class="photo" src={p.src} alt={p.alt} loading="lazy" />
+          ? (
+            <figure class="pfig" tabindex="0">
+              <img class="photo" src={p.src} alt={p.alt} loading="lazy" />
+              {(p.date || p.caption) && (
+                <figcaption>{p.date && <span class="pdate">{p.date}</span>}{p.caption}</figcaption>
+              )}
+            </figure>
+          )
           : <div class="photo">photo · {p.alt}</div>
       )}
     </section>
