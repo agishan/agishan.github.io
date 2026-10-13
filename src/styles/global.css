@@ -91,6 +91,21 @@ img.photo { padding: 0; border-style: solid; }
 .jobs .what small { margin-top: 2px; }
 .status { color: var(--accent); }
 
+/* Project tiles */
+.ptiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+.ptile { display: flex; flex-direction: column; gap: 4px; min-width: 0; text-decoration: none; color: inherit; }
+.ptile .art { aspect-ratio: 16/10; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--rule); display: grid; place-items: center; overflow: hidden; transition: border-color .15s; }
+.ptile .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ptile .big { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px; text-align: center; }
+.ptile .big b { font-size: 34px; font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--ink); }
+.ptile .big span { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.ptile > b { font-weight: 500; font-size: 16px; }
+.ptile small { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.ptile .tags { margin-top: 2px; }
+a.ptile:hover .art { border-color: var(--accent); }
+a.ptile:hover > b { color: var(--accent); }
+a.ptile > b::after { content: " →"; color: var(--muted); font-weight: 400; }
+
 /* Detail pages */
 .back { font-size: 14px; color: var(--muted); text-decoration: none; }
 .back:hover { color: var(--accent); }
@@ -131,6 +146,7 @@ section[id] { scroll-margin-top: 24px; }
   .photos, .shelf { gap: 6px; }
   .photo { font-size: 10px; padding: 6px; }
   .rows li, .jobs li { grid-template-columns: 1fr; }
+  .ptiles { grid-template-columns: 1fr; gap: 28px; }
   .lead { font-size: 19px; }
   .ptitle h1 { font-size: 25px; }
   .tile small { display: none; }

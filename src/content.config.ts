@@ -34,6 +34,7 @@ const projects = defineCollection({
     status: z.string().default(""),
     stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
     links: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+    cover: z.string().default(""), // tile image, e.g. "/photos/picktacular.png". Empty shows the first stat instead.
     order: z.number(),
     page: z.boolean().default(true),
     draft: z.boolean().default(false),

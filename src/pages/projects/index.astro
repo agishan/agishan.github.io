@@ -7,26 +7,28 @@ const projects = (await getCollection("projects", (p) => !p.data.draft)).sort((a
 <Base title="Projects" section="projects">
   <div class="page">
     <p class="lead">Things I've built, mostly at the intersection of healthcare, optimization and data systems.</p>
-    <section>
-      <ul class="rows">
-        {projects.map((p) => {
-          const inner = (
-            <>
-              <b>{p.data.title}</b>
-              <small>{p.data.summary}</small>
-              {p.data.stack.length > 0 && <span class="tags">{p.data.stack.join(" · ")}</span>}
-            </>
-          );
-          return (
-            <li>
-              <span class="when">{p.data.when}</span>
-              {p.data.page
-                ? <a class="what" href={`/projects/${p.id}`}>{inner}</a>
-                : <span class="what">{inner}</span>}
-            </li>
-          );
-        })}
-      </ul>
+    <section class="ptiles">
+      {projects.map((p) => {
+        const stat = p.data.stats[0];
+        const inner = (
+          <>
+            <div class="art">
+              {p.data.cover
+                ? <img src={p.data.cover} alt="" loading="lazy" />
+                : stat
+                  ? <div class="big"><b>{stat.value}</b><span>{stat.label}</span></div>
+                  : <div class="big"><span>{p.data.stack.slice(0, 2).join(" · ")}</span></div>}
+            </div>
+            <span class="when">{p.data.when}{p.data.with && ` · ${p.data.with}`}</span>
+            <b>{p.data.title}</b>
+            <small>{p.data.summary}</small>
+            {p.data.stack.length > 0 && <span class="tags">{p.data.stack.join(" · ")}</span>}
+          </>
+        );
+        return p.data.page
+          ? <a class="ptile" href={`/projects/${p.id}`}>{inner}</a>
+          : <div class="ptile">{inner}</div>;
+      })}
     </section>
   </div>
 </Base>
