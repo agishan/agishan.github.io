@@ -4,12 +4,12 @@ export const site = {
   name: "Agishan Thaya",
   location: "Waterloo, ON",
   description:
-    "Agishan Thaya: engineer working where operations research meets software infrastructure.",
+    "Agishan Thaya: data analyst turned data scientist turned operations researcher turned software engineer.",
 
   // Home page
-  lead: "I'm Agishan, an engineer working where operations research meets software infrastructure.",
+  lead: "I'm Agishan. I started as a data analyst, became a data scientist, then an operations researcher, and now I'm a software engineer.",
   bio: [
-    "I like taking a messy operational process, modelling it, and handing the people who run it a system that makes the decision for them. That's been surgical scheduling at a hospital, plant routing at Dandy, and webhook delivery at Shopify.",
+    "Analyst at Loblaw and Maple Leaf Foods. Data scientist at RBC and Dandy. Operations research at Cambridge Memorial Hospital. Software engineer at Shopify and Claim Health AI.",
     "I graduated from the University of Waterloo in 2026 with a degree in Management Engineering, a double specialization in Artificial Intelligence & Computing, and a spot on the Dean's Honours List.",
   ],
   now: "", // e.g. "Reading about stream processing and cooking through a ramen book." Empty hides it.

@@ -6,7 +6,7 @@ const projects = (await getCollection("projects", (p) => !p.data.draft)).sort((a
 ---
 <Base title="Projects" section="projects">
   <div class="page">
-    <p class="lead">Things I've built, mostly at the intersection of healthcare, optimization and data systems.</p>
+    <p class="lead">Things I've built, at work, at school and on my own.</p>
     <section class="ptiles">
       {projects.map((p) => {
         const stat = p.data.stats[0];
