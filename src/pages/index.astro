@@ -5,7 +5,10 @@ import { site } from "../data/site";
 <Base section="about">
   <div class="page">
     <section class="prose">
-      <p class="lead">{site.lead}</p>
+      <p class="lead">
+        {site.lead}{" "}
+        <span class="rot" aria-hidden="true"><span class="rot-track">{[...site.titles, site.titles[0]].map((t) => <span>{t}</span>)}</span></span><span class="rot-static">{site.titles.join(", ")}</span>.
+      </p>
       {site.bio.map((p) => <p>{p}</p>)}
       {site.now && <p class="now"><b>Now:</b> {site.now}</p>}
     </section>
@@ -45,6 +48,33 @@ import { site } from "../data/site";
 </Base>
 
 <script>
+  // Title rotator: slides to the next title every 2.2s and eases the width to fit it.
+  const rot = document.querySelector<HTMLElement>(".rot");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (rot && !reduce) {
+    const track = rot.querySelector<HTMLElement>(".rot-track")!;
+    const items = [...track.children] as HTMLElement[];
+    const n = items.length - 1; // last item is a copy of the first, for a seamless loop
+    let i = 0;
+    const fit = () => { rot.style.width = items[i].offsetWidth + "px"; };
+    document.documentElement.classList.add("rot-on");
+    fit();
+    addEventListener("resize", fit);
+    setInterval(() => {
+      i++;
+      track.style.transition = "";
+      track.style.transform = `translateY(${-i * 100 / items.length}%)`;
+      fit();
+      if (i === n) {
+        setTimeout(() => {
+          track.style.transition = "none";
+          i = 0;
+          track.style.transform = "translateY(0)";
+        }, 700);
+      }
+    }, 2200);
+  }
+
   const dlg = document.querySelector<HTMLDialogElement>("dialog.lightbox")!;
   const img = dlg.querySelector("img")!;
   const cap = dlg.querySelector<HTMLParagraphElement>(".lb-cap")!;

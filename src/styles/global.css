@@ -200,3 +200,10 @@ a.ptile:hover > b::after, .rows a.what:hover b::after { transform: translateX(4p
 .plinks a { color: var(--muted); text-decoration: none; }
 .plinks a:hover { color: var(--accent); }
 a.ptile.ext > b::after { content: " ↗"; }
+
+/* Title rotator on the home intro */
+.rot { display: none; }
+.rot-on .rot { display: inline-block; vertical-align: bottom; height: 1.45em; overflow: hidden; color: var(--accent); transition: width .55s cubic-bezier(.7, 0, .2, 1); -webkit-mask-image: linear-gradient(transparent, #000 22%, #000 78%, transparent); mask-image: linear-gradient(transparent, #000 22%, #000 78%, transparent); }
+.rot-track { display: flex; flex-direction: column; transition: transform .6s cubic-bezier(.7, 0, .2, 1); }
+.rot-track span { display: block; height: 1.45em; line-height: 1.45em; white-space: nowrap; width: max-content; }
+.rot-on .rot-static { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

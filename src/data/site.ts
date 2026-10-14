@@ -7,7 +7,19 @@ export const site = {
     "Agishan Thaya: data analyst, then data scientist, then operations researcher. Now an engineer at Shopify on Order Editing.",
 
   // Home page
-  lead: "I'm Agishan. Data analyst, then data scientist, then operations researcher. Now I'm an engineer at Shopify, on the Order Editing team.",
+  // Home intro: "I'm Agishan. I do engineering at Shopify, and I've been ___." The blank cycles through titles.
+  lead: "I'm Agishan. I do engineering at Shopify, and I've been",
+  titles: [
+    "a fullstack engineer",
+    "an infrastructure engineer",
+    "a data scientist",
+    "an operations researcher",
+    "a data analyst",
+    "a solutions analyst",
+    "a pharmacy technician",
+    "an AV technician",
+    "an IT technician",
+  ],
   bio: [
     "The thread through all of it is data: warehouse models, dbt pipelines, experiments, and the dashboards people actually open. I like owning the whole path, from raw tables to the number someone makes a decision with.",
     "Before this: analytics at Loblaw and Maple Leaf Foods, data science at RBC and Dandy, operations research at Cambridge Memorial Hospital, and engineering at Shopify (infrastructure) and Claim Health AI.",
