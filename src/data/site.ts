@@ -17,10 +17,10 @@ export const site = {
     "Reach out if you want to talk scheduling problems, streaming systems, or what to cook this week.",
 
   // Put image files in public/photos/ and set src to "/photos/<file>". Empty src shows a placeholder.
-  // date + caption show on hover (tap on phones). Full catalog: Desktop/Photos of Me/_captions.csv
+  // date + caption show on hover; clicking opens `full` (the uncropped photo). Catalog: Desktop/Photos of Me/_captions.csv
   photos: [
-    { src: "/photos/porto.jpg", alt: "Me by the Douro river in Porto", date: "Oct 2024", caption: "By the Douro in Porto, Portugal" },
-    { src: "/photos/grad-friends.jpg", alt: "Graduation day at Waterloo with friends", date: "Jun 2026", caption: "Convocation with friends, diploma in hand" },
+    { src: "/photos/porto.jpg", full: "/photos/full/porto.jpg", alt: "Me by the Douro river in Porto", date: "Oct 2024", caption: "By the Douro in Porto, Portugal" },
+    { src: "/photos/grad-friends.jpg", full: "/photos/full/grad-friends.jpg", alt: "Graduation day at Waterloo with friends", date: "Jun 2026", caption: "Convocation with friends, diploma in hand" },
   ],
 
   // Put your resume at public/resume.pdf, then set this to "/resume.pdf". Empty hides the link.

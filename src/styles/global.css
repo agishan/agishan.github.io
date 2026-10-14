@@ -164,11 +164,11 @@ nav.links a[aria-current="page"]::after { transform: scaleX(1); background: var(
 .pfig img.photo { display: block; transition: border-color .25s ease; }
 .pfig figcaption { position: absolute; inset: auto 1px 1px 1px; padding: 28px 10px 9px; background: linear-gradient(to top, rgb(0 0 0 / .78), rgb(0 0 0 / 0)); color: #fff; font-size: 13px; line-height: 1.35; opacity: 0; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease; pointer-events: none; }
 .pfig .pdate { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; opacity: .8; margin-bottom: 2px; }
-.pfig:hover, .pfig:focus-visible { transform: translateY(-4px) rotate(-1.5deg); box-shadow: 0 10px 24px -12px rgb(0 0 0 / .35); }
-.pfig:nth-child(2):hover, .pfig:nth-child(2):focus-visible { transform: translateY(-4px) rotate(1deg); }
+.pfig:hover, .pfig:focus-within { transform: translateY(-4px) rotate(-1.5deg); box-shadow: 0 10px 24px -12px rgb(0 0 0 / .35); }
+.pfig:nth-child(2):hover, .pfig:nth-child(2):focus-within { transform: translateY(-4px) rotate(1deg); }
 .pfig:nth-child(3):hover, .pfig:nth-child(3):focus-visible { transform: translateY(-4px) rotate(1.5deg); }
-.pfig:hover img.photo, .pfig:focus-visible img.photo { border-color: var(--accent); }
-.pfig:hover figcaption, .pfig:focus figcaption { opacity: 1; transform: none; }
+.pfig:hover img.photo, .pfig:focus-within img.photo { border-color: var(--accent); }
+.pfig:hover figcaption, .pfig:focus-within figcaption { opacity: 1; transform: none; }
 @media (max-width: 480px) { .pfig figcaption { font-size: 10.5px; padding: 20px 6px 6px; } .pfig .pdate { font-size: 9.5px; } }
 
 .ptile .art img { transition: transform .35s ease; }
@@ -182,3 +182,14 @@ a.ptile:hover > b::after, .rows a.what:hover b::after { transform: translateX(4p
   *, *::before, *::after { transition: none !important; }
   .pfig:hover, .pfig:focus-visible, a.ptile:hover .art img { transform: none; }
 }
+
+/* Lightbox */
+.pfig > a { display: block; cursor: zoom-in; }
+.lightbox { padding: 0; border: 0; background: transparent; max-width: min(92vw, 1400px); max-height: 92vh; overflow: visible; cursor: zoom-out; }
+.lightbox::backdrop { background: rgb(0 0 0 / .82); }
+.lightbox img { display: block; max-width: min(92vw, 1400px); max-height: 84vh; width: auto; height: auto; margin: 0 auto; border-radius: 2px; }
+.lb-cap { margin: 10px 0 0; text-align: center; color: #fff; font-size: 14px; }
+.lb-close { position: fixed; top: 14px; right: 18px; font-size: 30px; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
+.lightbox[open] { animation: lb-in .18s ease; }
+@keyframes lb-in { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }

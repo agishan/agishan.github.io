@@ -14,8 +14,10 @@ import { site } from "../data/site";
       {site.photos.map((p) =>
         p.src
           ? (
-            <figure class="pfig" tabindex="0">
-              <img class="photo" src={p.src} alt={p.alt} loading="lazy" />
+            <figure class="pfig">
+              <a href={p.full || p.src} data-full={p.full || p.src} data-caption={[p.date, p.caption].filter(Boolean).join(" · ")} aria-label={`View full photo: ${p.alt}`}>
+                <img class="photo" src={p.src} alt={p.alt} loading="lazy" />
+              </a>
               {(p.date || p.caption) && (
                 <figcaption>{p.date && <span class="pdate">{p.date}</span>}{p.caption}</figcaption>
               )}
@@ -34,4 +36,29 @@ import { site } from "../data/site";
       {site.resume && <a href={site.resume}>Resume (PDF)</a>}
     </section>
   </div>
+
+  <dialog class="lightbox" aria-label="Photo">
+    <button class="lb-close" aria-label="Close">×</button>
+    <img alt="" />
+    <p class="lb-cap"></p>
+  </dialog>
 </Base>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>("dialog.lightbox")!;
+  const img = dlg.querySelector("img")!;
+  const cap = dlg.querySelector<HTMLParagraphElement>(".lb-cap")!;
+  document.querySelectorAll<HTMLAnchorElement>(".pfig a[data-full]").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (typeof dlg.showModal !== "function") return; // old browsers just follow the link
+      e.preventDefault();
+      img.src = a.dataset.full!;
+      img.alt = a.querySelector("img")?.alt ?? "";
+      cap.textContent = a.dataset.caption ?? "";
+      dlg.showModal();
+    });
+  });
+  // Click anywhere (backdrop, image, ×) closes it; Escape works natively.
+  dlg.addEventListener("click", () => dlg.close());
+  dlg.addEventListener("close", () => img.removeAttribute("src"));
+</script>
