@@ -25,9 +25,22 @@ const projects = (await getCollection("projects", (p) => !p.data.draft)).sort((a
             {p.data.stack.length > 0 && <span class="tags">{p.data.stack.join(" · ")}</span>}
           </>
         );
-        return p.data.page
+        const ext = p.data.links;
+        const tile = p.data.page
           ? <a class="ptile" href={`/projects/${p.id}`}>{inner}</a>
-          : <div class="ptile">{inner}</div>;
+          : ext.length > 0
+            ? <a class="ptile ext" href={ext[0].href} target="_blank" rel="noopener">{inner}</a>
+            : <div class="ptile">{inner}</div>;
+        return (
+          <div class="pcard">
+            {tile}
+            {ext.length > 0 && (
+              <div class="plinks">
+                {ext.map((l) => <a href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}
+              </div>
+            )}
+          </div>
+        );
       })}
     </section>
   </div>

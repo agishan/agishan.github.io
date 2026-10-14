@@ -193,3 +193,10 @@ a.ptile:hover > b::after, .rows a.what:hover b::after { transform: translateX(4p
 .lightbox[open] { animation: lb-in .18s ease; }
 @keyframes lb-in { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }
+
+/* Project links */
+.pcard { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.plinks { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; }
+.plinks a { color: var(--muted); text-decoration: none; }
+.plinks a:hover { color: var(--accent); }
+a.ptile.ext > b::after { content: " ↗"; }

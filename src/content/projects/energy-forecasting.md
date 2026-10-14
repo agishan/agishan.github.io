@@ -6,6 +6,8 @@ when: "2023"
 stack: ["Python", "XGBoost"]
 stats:
   - { value: "8.55%", label: "MAPE" }
+links:
+  - { label: "GitHub", href: "https://github.com/agishan/EnergyConsumption" }
 order: 6
 page: false # listed but not clickable; set to true once it has a write-up below
 ---

@@ -38,7 +38,7 @@ const d = project.data;
     )}
     {d.links.length > 0 && (
       <section class="social" aria-label="Links">
-        {d.links.map((l) => <a href={l.href}>{l.label}</a>)}
+        {d.links.map((l) => <a href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}
       </section>
     )}
     <nav class="pnav" aria-label="More projects">

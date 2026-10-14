@@ -10,6 +10,8 @@ stats:
   - { value: "85%", label: "preferred over baseline" }
   - { value: "8", label: "specialist physicians" }
   - { value: "115", label: "blinded evaluations" }
+links:
+  - { label: "GitHub", href: "https://github.com/agishan/Thera-RAG" }
 order: 2
 todo: "ResumeRepo marks these figures needs-confirmation. Check 85% / 8 / 115 and the year."
 ---
