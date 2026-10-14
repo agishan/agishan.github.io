@@ -5,7 +5,7 @@ when: "Jun–Sep 2019"
 where: "Scarborough, ON"
 summary: "Ran lighting and video for events of 1,300+ people as the hall's in-house AV team."
 tools: ["Lighting", "Video", "Audio"]
-order: 10
+order: 9
 todo: "Check the story sounds like you. A favourite or most chaotic event would make this page."
 ---
 

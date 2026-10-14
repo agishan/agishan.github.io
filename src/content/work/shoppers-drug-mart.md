@@ -5,7 +5,7 @@ when: "2019–2021"
 where: "Stouffville, ON"
 summary: "Ran logistics for the store's COVID-19 vaccine clinic and cut wait times by 43%."
 tools: ["Salesforce"]
-order: 9
+order: 8
 todo: "Check the story sounds like you. How was the 43% measured, and what did you change in the clinic flow?"
 ---
 

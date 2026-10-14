@@ -1,11 +1,11 @@
 ---
 company: "USCAN Technologies"
 role: "IT Technician"
-when: "2016–2021"
+when: "2016–forever"
 where: "Toronto, ON"
 summary: "Remote support and network installs at my dad's IT company, part-time through high school."
 tools: ["TeamViewer", "Jira", "CAT6", "VoIP"]
-order: 8
+order: 10
 todo: "Check the story sounds like you."
 ---
 

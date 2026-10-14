@@ -7,7 +7,7 @@ const jobs = (await getCollection("work", (j) => !j.data.draft)).sort((a, b) => 
 ---
 <Base title="Work" section="work">
   <div class="page">
-    <p class="lead">Where I've worked, newest first.</p>
+    <p class="lead">Where I've worked, most recent start first.</p>
     <section>
       <ul class="rows jobs">
         {jobs.map((j) => (
