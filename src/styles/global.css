@@ -173,7 +173,7 @@ nav.links a[aria-current="page"]::after { transform: scaleX(1); background: var(
 
 .ptile .art img { transition: transform .35s ease; }
 a.ptile:hover .art img { transform: scale(1.04); }
-a.ptile > b::after, .rows a.what b::after { display: inline-block; transition: transform .2s ease, color .2s ease; }
+a.ptile > b::after, .rows a.what b::after { display: inline-block; margin-left: .3em; transition: transform .2s ease, color .2s ease; }
 a.ptile:hover > b::after, .rows a.what:hover b::after { transform: translateX(4px); color: var(--accent); }
 .rows a.what:hover .role { color: var(--ink); }
 .back, .pnav a { transition: color .15s ease, transform .2s ease; }
