@@ -1,6 +1,6 @@
 ---
 title: "Reading clinical notes with an LLM"
-pitch: "Turning a children's therapy centre's free-text session notes into progress scores, then using them to plan how many sessions each child needs."
+pitch: "Turning a children's speech-language therapy centre's free-text session notes into progress scores, then using them to plan how many sessions each child needs."
 summary: "Prompt-engineered Claude to score therapy progress from clinical notes, then clustered progress trajectories to free up ~29% of sessions for the waitlist."
 when: "2026"
 with: "MSE 555 · real centre, course case"
@@ -11,6 +11,7 @@ stats:
   - { value: "~10", label: "more children served" }
 links:
   - { label: "GitHub", href: "https://github.com/agishan/MSE555-A3" }
+cover: "/photos/555-savings-curves.png"
 order: 5
 ---
 
@@ -27,3 +28,5 @@ A children's therapy centre books every new client for a fixed block of sessions
 ## What it found
 
 For the 35-child waitlist, reassessing on each cluster's schedule instead of a flat 12 sessions needs about 299 sessions instead of 420. That frees **~121 sessions (29%)**, roughly 10 more children who could start treatment. These are projections from the case, not a change the centre has made.
+
+[![Waitlist capacity: 420 sessions under the flat 12-session pathway vs 299 under the cluster-based policy](/photos/555-waitlist-capacity.png)](/photos/555-waitlist-capacity.png)
