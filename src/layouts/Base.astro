@@ -9,12 +9,14 @@ interface Props {
 }
 const { title, description = site.description, section } = Astro.props;
 const fullTitle = title ? `${title} · ${site.name}` : site.name;
-const nav = [
+const navAll = [
   { href: "/", label: "about", key: "about" },
   { href: "/work", label: "work", key: "work" },
   { href: "/projects", label: "projects", key: "projects" },
   { href: "/clubs", label: "clubs", key: "clubs" },
 ];
+// Pages can be switched off from /admin (Home page → Pages in menu).
+const nav = navAll.filter((n) => n.key !== "clubs" || site.pages.clubs);
 ---
 <!doctype html>
 <html lang="en">

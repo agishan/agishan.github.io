@@ -1,0 +1,163 @@
+# Admin for agishan.github.io (Sveltia CMS, Decap-compatible config).
+# Sign in with a GitHub token: fine-grained, this repo only, "Contents: Read and write".
+backend:
+  name: github
+  repo: agishan/agishan.github.io
+  branch: main
+  commit_messages:
+    create: "Admin: add {{collection}} “{{slug}}”"
+    update: "Admin: update {{collection}} “{{slug}}”"
+    delete: "Admin: delete {{collection}} “{{slug}}”"
+    uploadMedia: "Admin: upload “{{path}}”"
+    deleteMedia: "Admin: delete “{{path}}”"
+
+site_url: https://agishan.github.io
+display_url: https://agishan.github.io
+media_folder: public/photos
+public_folder: /photos
+
+collections:
+  # ---------------------------------------------------------------- Home page
+  - name: home
+    label: Home page
+    files:
+      - name: home
+        label: Home page, photos & links
+        file: src/data/home.json
+        fields:
+          - { name: lead, label: "Intro, line 1", widget: string, hint: "e.g. Hi, I'm Agishan, currently a SWE at Shopify." }
+          - { name: leadBeen, label: "Intro, line 2 start", widget: string, hint: "The words before the rotating title, e.g. I've been" }
+          - name: titles
+            label: Rotating titles
+            hint: "Include a/an, e.g. “an operations researcher”. Drag to reorder."
+            widget: list
+            field: { name: title, label: Title, widget: string }
+          - name: bio
+            label: Bio paragraphs
+            widget: list
+            field: { name: paragraph, label: Paragraph, widget: text }
+          - { name: now, label: "Now: line", widget: string, required: false, hint: "Leave empty to hide it" }
+          - { name: reachOut, label: "Reach-out line", widget: text }
+          - name: photos
+            label: Home photos
+            hint: "Shown side by side. Hover shows date + caption; click opens the full photo."
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { name: hidden, label: Hide this photo, widget: boolean, default: false }
+              - { name: src, label: "Photo (cropped, shown on page)", widget: image }
+              - { name: full, label: "Full photo (opens on click)", widget: image, required: false }
+              - { name: date, label: Date, widget: string, required: false, hint: "e.g. Oct 2024" }
+              - { name: caption, label: Caption, widget: string, required: false }
+              - { name: alt, label: "Description for screen readers", widget: string }
+          - name: socials
+            label: Links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: hidden, label: Hide, widget: boolean, default: false }
+              - { name: label, label: Label, widget: string }
+              - { name: href, label: URL, widget: string }
+          - { name: resume, label: Resume PDF, widget: file, required: false, media_folder: /public, public_folder: /, hint: "Upload a PDF to show a Resume link. Leave empty to hide." }
+          - name: pages
+            label: Pages in menu
+            widget: object
+            fields:
+              - { name: clubs, label: Show the clubs page, widget: boolean, default: true }
+          - { name: name, label: Name, widget: string }
+          - { name: location, label: Location (footer), widget: string }
+          - { name: description, label: "Search & link-preview description", widget: text }
+
+  # ---------------------------------------------------------------- Work
+  - name: work
+    label: Work
+    label_singular: Job
+    folder: src/content/work
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: company
+    slug: "{{company}}"
+    sortable_fields: [order, company, when]
+    summary: "{{order}}. {{company}}: {{role}}{{draft | ternary(' (hidden)', '')}}"
+    fields:
+      - { name: draft, label: Hide from site, widget: boolean, default: false, required: false }
+      - { name: company, label: Company, widget: string }
+      - { name: role, label: Role, widget: string }
+      - { name: when, label: When, widget: string, hint: "Shown as typed, e.g. Jan–Sep 2025" }
+      - { name: where, label: Where, widget: string, required: false }
+      - { name: summary, label: One-liner (work list), widget: text }
+      - { name: tools, label: Tools, widget: list, required: false }
+      - { name: order, label: "Order (0 = top)", widget: number, value_type: int }
+      - { name: body, label: Story (The job / What I did / What mattered), widget: markdown }
+      - { name: todo, label: "Private note (never shown on the site)", widget: text, required: false }
+
+  # ---------------------------------------------------------------- Projects
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: src/content/projects
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: title
+    slug: "{{title}}"
+    sortable_fields: [order, title]
+    summary: "{{order}}. {{title}}{{draft | ternary(' (hidden)', '')}}"
+    fields:
+      - { name: draft, label: Hide from site, widget: boolean, default: false, required: false }
+      - { name: title, label: Title, widget: string }
+      - { name: pitch, label: Pitch (big line on the project page), widget: text }
+      - { name: summary, label: Summary (tile), widget: text }
+      - { name: when, label: When, widget: string }
+      - { name: with, label: "With (team, course, partner)", widget: string, required: false }
+      - { name: stack, label: Stack, widget: list, required: false }
+      - { name: award, label: Award, widget: string, required: false }
+      - { name: status, label: Status, widget: string, required: false }
+      - name: stats
+        label: Headline numbers
+        widget: list
+        required: false
+        summary: "{{fields.value}}: {{fields.label}}"
+        fields:
+          - { name: value, label: Number, widget: string }
+          - { name: label, label: Label, widget: string }
+      - name: links
+        label: Links (GitHub, articles, PDFs)
+        widget: list
+        required: false
+        summary: "{{fields.label}}"
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: href, label: URL, widget: string }
+      - { name: cover, label: Tile cover image, widget: image, required: false, hint: "Leave empty to show the first headline number instead" }
+      - { name: page, label: Has its own page, widget: boolean, default: true, required: false, hint: "Off = tile only (links to the first link instead)" }
+      - { name: order, label: "Order (1 = first)", widget: number, value_type: int }
+      - { name: body, label: Write-up, widget: markdown }
+      - { name: todo, label: "Private note (never shown on the site)", widget: text, required: false }
+
+  # ---------------------------------------------------------------- Clubs
+  - name: clubs
+    label: Clubs & volunteering
+    files:
+      - name: clubs
+        label: Clubs page
+        file: src/data/clubs.json
+        fields:
+          - name: groups
+            label: Sections
+            widget: list
+            summary: "{{fields.group}}"
+            fields:
+              - { name: hidden, label: Hide this section, widget: boolean, default: false }
+              - { name: group, label: Section title, widget: string }
+              - name: items
+                label: Entries
+                widget: list
+                summary: "{{fields.org}}: {{fields.role}}"
+                fields:
+                  - { name: hidden, label: Hide, widget: boolean, default: false }
+                  - { name: org, label: Organization, widget: string }
+                  - { name: role, label: Role, widget: string }
+                  - { name: when, label: When, widget: string, required: false }
+                  - { name: what, label: What I did, widget: text, required: false }

@@ -1,0 +1,59 @@
+{
+  "name": "Agishan Thaya",
+  "location": "Waterloo, ON",
+  "description": "Agishan Thaya: data analyst, then data scientist, then operations researcher. Now an engineer at Shopify on Order Editing.",
+  "lead": "Hi, I'm Agishan, currently a SWE at Shopify.",
+  "leadBeen": "I've been",
+  "titles": [
+    "a fullstack engineer",
+    "an infrastructure engineer",
+    "a data scientist",
+    "an operations researcher",
+    "a data analyst",
+    "a solutions analyst",
+    "a pharmacy technician",
+    "an AV technician",
+    "an IT technician"
+  ],
+  "bio": [
+    "The thread through all of it is data: warehouse models, dbt pipelines, experiments, and the dashboards people actually open. I like owning the whole path, from raw tables to the number someone makes a decision with.",
+    "Before this: analytics at Loblaw and Maple Leaf Foods, data science at RBC and Dandy, operations research at Cambridge Memorial Hospital, and engineering at Shopify (infrastructure) and Claim Health AI.",
+    "I graduated from the University of Waterloo in 2026 with a degree in Management Engineering, a double specialization in Artificial Intelligence & Computing, and a spot on the Dean's Honours List."
+  ],
+  "now": "",
+  "reachOut": "Reach out if you want to talk scheduling problems, streaming systems, or what to cook this week.",
+  "photos": [
+    {
+      "src": "/photos/porto.jpg",
+      "full": "/photos/full/porto.jpg",
+      "alt": "Me by the Douro river in Porto during reading week on my DTU exchange",
+      "date": "Oct 2024",
+      "caption": "Me by the Douro in Porto, on reading week during my DTU exchange",
+      "hidden": false
+    },
+    {
+      "src": "/photos/grad-friends.jpg",
+      "full": "/photos/full/grad-friends.jpg",
+      "alt": "Me at my Waterloo convocation with my friends",
+      "date": "Jun 2026",
+      "caption": "My convocation day, with my friends and my diploma",
+      "hidden": false
+    }
+  ],
+  "resume": "",
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Agishan",
+      "hidden": false
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/agishan",
+      "hidden": false
+    }
+  ],
+  "pages": {
+    "clubs": true
+  }
+}

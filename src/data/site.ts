@@ -1,114 +1,22 @@
-// Site-wide text that isn't a work or project entry. Edit freely.
+// Site text lives in the JSON files next to this one, so it can be edited at /admin
+// (Sveltia CMS) without touching code. This file only reads them and drops anything
+// marked `hidden`.
+import home from "./home.json";
+import clubs from "./clubs.json";
+import misc from "./misc.json";
 
 export const site = {
-  name: "Agishan Thaya",
-  location: "Waterloo, ON",
-  description:
-    "Agishan Thaya: data analyst, then data scientist, then operations researcher. Now an engineer at Shopify on Order Editing.",
-
-  // Home page
-  // Home intro, two lines: lead, then "I've been ___." where the blank cycles through titles.
-  lead: "Hi, I'm Agishan, currently a SWE at Shopify.",
-  leadBeen: "I've been",
-  titles: [
-    "a fullstack engineer",
-    "an infrastructure engineer",
-    "a data scientist",
-    "an operations researcher",
-    "a data analyst",
-    "a solutions analyst",
-    "a pharmacy technician",
-    "an AV technician",
-    "an IT technician",
-  ],
-  bio: [
-    "The thread through all of it is data: warehouse models, dbt pipelines, experiments, and the dashboards people actually open. I like owning the whole path, from raw tables to the number someone makes a decision with.",
-    "Before this: analytics at Loblaw and Maple Leaf Foods, data science at RBC and Dandy, operations research at Cambridge Memorial Hospital, and engineering at Shopify (infrastructure) and Claim Health AI.",
-    "I graduated from the University of Waterloo in 2026 with a degree in Management Engineering, a double specialization in Artificial Intelligence & Computing, and a spot on the Dean's Honours List.",
-  ],
-  now: "", // e.g. "Reading about stream processing and cooking through a ramen book." Empty hides it.
-  reachOut:
-    "Reach out if you want to talk scheduling problems, streaming systems, or what to cook this week.",
-
-  // Put image files in public/photos/ and set src to "/photos/<file>". Empty src shows a placeholder.
-  // date + caption show on hover; clicking opens `full` (the uncropped photo). Catalog: Desktop/Photos of Me/_captions.csv
-  photos: [
-    { src: "/photos/porto.jpg", full: "/photos/full/porto.jpg", alt: "Me by the Douro river in Porto during reading week on my DTU exchange", date: "Oct 2024", caption: "Me by the Douro in Porto, on reading week during my DTU exchange" },
-    { src: "/photos/grad-friends.jpg", full: "/photos/full/grad-friends.jpg", alt: "Me at my Waterloo convocation with my friends", date: "Jun 2026", caption: "My convocation day, with my friends and my diploma" },
-  ],
-
-  // Put your resume at public/resume.pdf, then set this to "/resume.pdf". Empty hides the link.
-  resume: "",
-
-  socials: [
-    { label: "GitHub", href: "https://github.com/Agishan" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/agishan" },
-  ],
+  ...home,
+  photos: home.photos.filter((p) => !p.hidden),
+  socials: home.socials.filter((s) => !s.hidden),
 };
 
-// Misc page
-export const reading = [
-  { title: "Web Scalability for Startup Engineers", author: "Artur Ejsmont", status: "reading", note: "" },
-];
-
-export const cooking = [
-  // { src: "/photos/ramen.jpg", name: "Tonkotsu ramen" },
-] as { src: string; name: string }[];
-
 // Extracurriculars & volunteering page (/clubs). Groups show in this order.
-export const involvement: {
-  group: string;
-  items: { org: string; role: string; when: string; what: string; href?: string }[];
-}[] = [
-  {
-    group: "University of Waterloo",
-    items: [
-      {
-        org: "Institute of Industrial & Systems Engineers (IISE), Waterloo chapter",
-        role: "Chapter President, then Advisor",
-        when: "2023–2024",
-        what: "Restarted the chapter after a 3-year hiatus. Raised $16,000 from faculty, the department, EngSoc and private sponsors, led two delegations to the IISE national conference (we won 2 of 4 competitions), and started a first-year mentorship program, including the scripts that matched mentors to students.",
-      },
-      {
-        org: "UW Cooking Club",
-        role: "VP",
-        when: "",
-        what: "Helped run the club, and built its websites: a Django + Vue recipe and events site, then a React rebuild.",
-      },
-      {
-        org: "UW Data Science Club",
-        role: "Internals Lead",
-        when: "",
-        what: "",
-      },
-      { org: "Industry 4.0", role: "VP", when: "", what: "" },
-      { org: "Engineering Society (EngSoc)", role: "Elected representative", when: "", what: "" },
-      {
-        org: "UW Poker Club",
-        role: "Developer",
-        when: "",
-        what: "Built the club's website in TypeScript and Tailwind, including tournament logistics.",
-      },
-      { org: "UW Analytics Group for Games and Sports", role: "Member", when: "", what: "" },
-      { org: "First-year mentorship", role: "Mentor", when: "", what: "Mentored incoming first-year students." },
-      { org: "Intramurals", role: "Dodgeball, flag football", when: "", what: "" },
-    ],
-  },
-  {
-    group: "Before university",
-    items: [
-      {
-        org: "707 Royal Canadian Air Cadets",
-        role: "Squadron Warrant Officer (WO2)",
-        when: "2014–2020",
-        what: "Six years. Led a squadron-wide trip for 50 cadets on a $2,500 budget, and taught cadets of different ages everything from leadership to survival skills.",
-      },
-      {
-        org: "Father Michael McGivney AV Team",
-        role: "President",
-        when: "2018–2020",
-        what: "Ran my high school's AV team. Rebuilt admissions and team events (92% member retention), trained 25 members on the equipment, and directed a 40-student seminar series that earned Club Executive of the Month.",
-      },
-    ],
-  },
-];
+export const involvement = clubs.groups
+  .filter((g) => !g.hidden)
+  .map((g) => ({ ...g, items: g.items.filter((i) => !i.hidden) }))
+  .filter((g) => g.items.length > 0);
+
+// Misc page (currently hidden: src/pages/_misc.astro)
+export const reading = misc.reading;
+export const cooking = misc.cooking as { src: string; name: string }[];
