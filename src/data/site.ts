@@ -10,7 +10,7 @@ export const site = {
   lead: "I'm Agishan, an engineer working where operations research meets software infrastructure.",
   bio: [
     "I like taking a messy operational process, modelling it, and handing the people who run it a system that makes the decision for them. That's been surgical scheduling at a hospital, plant routing at Dandy, and webhook delivery at Shopify.",
-    "Management Engineering at the University of Waterloo, class of 2026.",
+    "I graduated from the University of Waterloo in 2026 with a degree in Management Engineering, a double specialization in Artificial Intelligence & Computing, and a spot on the Dean's Honours List.",
   ],
   now: "", // e.g. "Reading about stream processing and cooking through a ramen book." Empty hides it.
   reachOut:
@@ -19,8 +19,8 @@ export const site = {
   // Put image files in public/photos/ and set src to "/photos/<file>". Empty src shows a placeholder.
   // date + caption show on hover; clicking opens `full` (the uncropped photo). Catalog: Desktop/Photos of Me/_captions.csv
   photos: [
-    { src: "/photos/porto.jpg", full: "/photos/full/porto.jpg", alt: "Me by the Douro river in Porto", date: "Oct 2024", caption: "By the Douro in Porto, Portugal" },
-    { src: "/photos/grad-friends.jpg", full: "/photos/full/grad-friends.jpg", alt: "Graduation day at Waterloo with friends", date: "Jun 2026", caption: "Convocation with friends, diploma in hand" },
+    { src: "/photos/porto.jpg", full: "/photos/full/porto.jpg", alt: "Me by the Douro river in Porto during reading week on my DTU exchange", date: "Oct 2024", caption: "Me by the Douro in Porto, on reading week during my DTU exchange" },
+    { src: "/photos/grad-friends.jpg", full: "/photos/full/grad-friends.jpg", alt: "Me at my Waterloo convocation with my friends", date: "Jun 2026", caption: "My convocation day, with my friends and my diploma" },
   ],
 
   // Put your resume at public/resume.pdf, then set this to "/resume.pdf". Empty hides the link.
