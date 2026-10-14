@@ -11,13 +11,15 @@ stats:
   - { value: "−51%", label: "error vs. persistence baseline" }
 links:
   - { label: "GitHub", href: "https://github.com/nicholaschia1/MSE546" }
+cover: "/photos/546-daily-aqi.png"
 order: 4
-todo: "Optional: add a plot as the cover (e.g. copy 546_Project/plots/10a_daily_timeseries.png to public/photos/ and set cover:)."
 ---
 
 ## The problem
 
 India's daily Air Quality Index swings from "Good" to "Severe" with the season, and the bad days are the ones that matter. Using 29,531 city-days of pollutant readings from 2015 to 2020, our team predicted the next day's AQI and compared seven models, from "tomorrow equals today" up to an LSTM.
+
+[![Daily mean AQI across all stations, 2015 to 2020: sharp winter peaks every year, which is what makes next-day forecasting hard](/photos/546-daily-aqi.png)](/photos/546-daily-aqi.png)
 
 ## What I did
 
