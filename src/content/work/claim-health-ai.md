@@ -3,8 +3,8 @@ company: "Claim Health AI"
 role: "Fullstack Engineering Intern · engineer #5"
 when: "Jun–Aug 2026"
 where: "Toronto, ON"
-summary: "Moved analytics onto ClickHouse (70% faster pages) and built the LLM evaluation loop."
-tools: ["TypeScript", "React", "ClickHouse", "Python", "LLM evals"]
+summary: "Designed the ClickHouse warehouse behind customer analytics (70% faster pages) and an evaluation pipeline for LLM document extraction."
+tools: ["ClickHouse", "SQL", "Python", "TypeScript", "LLM evals"]
 order: 1
 todo: "Check the story sounds like you. Was the ClickHouse warehouse in production before you left?"
 ---

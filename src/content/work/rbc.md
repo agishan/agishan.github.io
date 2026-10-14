@@ -3,7 +3,7 @@ company: "RBC"
 role: "Data Scientist Intern, Internal Audit"
 when: "Sep–Dec 2023"
 where: "Toronto, ON"
-summary: "OCR and NLP automation for internal audit: 97% less audit time, 120 hours/year of reporting removed."
+summary: "OCR and SQL validation pipelines for internal audit (97% less audit time), plus NLP clustering to clean 7,000+ messy process names."
 tools: ["Python", "Tesseract OCR", "Oracle SQL", "NLP"]
 order: 5
 todo: "Check the story sounds like you. Which embedding model did RBC-03 use?"

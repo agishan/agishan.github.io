@@ -9,6 +9,7 @@ export const site = {
   // Home page
   lead: "I'm Agishan. Data analyst, then data scientist, then operations researcher. Now I'm an engineer at Shopify, on the Order Editing team.",
   bio: [
+    "The thread through all of it is data: warehouse models, dbt pipelines, experiments, and the dashboards people actually open. I like owning the whole path, from raw tables to the number someone makes a decision with.",
     "Before this: analytics at Loblaw and Maple Leaf Foods, data science at RBC and Dandy, operations research at Cambridge Memorial Hospital, and engineering at Shopify (infrastructure) and Claim Health AI.",
     "I graduated from the University of Waterloo in 2026 with a degree in Management Engineering, a double specialization in Artificial Intelligence & Computing, and a spot on the Dean's Honours List.",
   ],

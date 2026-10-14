@@ -3,7 +3,7 @@ company: "Cambridge Memorial Hospital"
 role: "Operations Research Intern · NSERC"
 when: "Jan–Aug 2024"
 where: "Cambridge & Waterloo, ON"
-summary: "Why surgical wait times are what they are: Gurobi models, ML forecasts, and a dashboard for the schedulers."
+summary: "Surgical wait-time analysis, ML forecasts and Gurobi models, shipped as self-serve dashboards for 15+ schedulers."
 tools: ["Python", "Gurobi", "XGBoost", "Streamlit"]
 order: 4
 todo: "Check the story sounds like you. Did the hospital act on any of the recommendations?"

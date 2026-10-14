@@ -3,8 +3,8 @@ company: "Dandy"
 role: "Data Scientist, Supply Chain & Ops"
 when: "Jan–Sep 2025"
 where: "New York, NY"
-summary: "Plant simulation, real-time order routing ($450K+ expected annual savings) and quality analytics."
-tools: ["Python", "SimPy", "Postgres", "dbt", "Looker", "Dagster"]
+summary: "dbt models, Looker dashboards and Dagster pipelines for two plants; a simulation-based A/B platform; a real-time tracker 500+ people used daily ($450K+ expected savings)."
+tools: ["SQL", "dbt", "Looker", "Dagster", "Hex", "Postgres", "Python"]
 order: 3
 todo: "Check the story sounds like you. Has the $450K been realized yet? If so, upgrade the wording."
 ---

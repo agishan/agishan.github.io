@@ -3,8 +3,8 @@ company: "Shopify"
 role: "Infrastructure Engineer"
 when: "Sep–Dec 2025"
 where: "Toronto, ON"
-summary: "Webhook infrastructure: a real-time SLA engine on Flink and Kafka, bot auth in Go, 1.3 TB/hour of logging cut."
-tools: ["Go", "Ruby", "Kafka", "Flink", "GCP"]
+summary: "Real-time p95/p99 latency metrics on Flink and Kafka, 1.3 TB/hour of GCP logging cut, and bot auth in Go for webhooks."
+tools: ["Flink", "Kafka", "GCP", "Go", "Ruby"]
 order: 2
 todo: "Check the story sounds like you."
 ---

@@ -3,7 +3,7 @@ company: "Loblaw Companies"
 role: "Data Analyst, Supply Chain"
 when: "Jan–Apr 2023"
 where: "Brampton, ON"
-summary: "Shrink analysis across 4.3M SKUs in every Ontario store, plus retiring legacy Access reports."
+summary: "SQL analysis across 4.3M SKUs in every Ontario store; replaced 11 Access apps with Python/SQL pipelines (93% faster)."
 tools: ["SQL", "Python", "pandas", "Oracle"]
 order: 6
 todo: "Check the story sounds like you."
