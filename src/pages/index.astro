@@ -6,8 +6,8 @@ import { site } from "../data/site";
   <div class="page">
     <section class="prose">
       <p class="lead">
-        {site.lead}{" "}
-        <span class="rot" aria-hidden="true"><span class="rot-track">{[...site.titles, site.titles[0]].map((t) => <span>{t}</span>)}</span></span><span class="rot-static">{site.titles.join(", ")}</span>.
+        <span class="lead-line">{site.lead}</span>
+        <span class="lead-line">{site.leadBeen}{" "}<span class="rot" aria-hidden="true"><span class="rot-track">{[...site.titles, site.titles[0]].map((t) => <span>{t}</span>)}</span></span><span class="rot-static">{site.titles.join(", ")}</span>.</span>
       </p>
       {site.bio.map((p) => <p>{p}</p>)}
       {site.now && <p class="now"><b>Now:</b> {site.now}</p>}

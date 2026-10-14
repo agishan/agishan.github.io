@@ -7,8 +7,9 @@ export const site = {
     "Agishan Thaya: data analyst, then data scientist, then operations researcher. Now an engineer at Shopify on Order Editing.",
 
   // Home page
-  // Home intro: "I'm Agishan. I do engineering at Shopify, and I've been ___." The blank cycles through titles.
-  lead: "I'm Agishan. I do engineering at Shopify, and I've been",
+  // Home intro, two lines: lead, then "I've been ___." where the blank cycles through titles.
+  lead: "Hi, I'm Agishan, currently a SWE at Shopify.",
+  leadBeen: "I've been",
   titles: [
     "a fullstack engineer",
     "an infrastructure engineer",
