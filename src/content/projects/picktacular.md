@@ -41,7 +41,7 @@ I designed and built the algorithm that decides which swaps to show first. That'
 - **Strong from day one.** A warm-start prior makes the first ranking equal to a sensible equal-weighted score, so it never starts worse than a fixed heuristic, and only gets better with feedback.
 - **Tested before trusting it.** In a simulation over 3,840 candidate pairs across 24 categories, its top five suggestions were right **37.7%** of the time, against **5.3%** for the simple overlap-based ranking we started with. That's roughly 7× more precise where reviewers look first.
 
-![The Picktacular team with Prof. Mahmoudzadeh at the 2026 capstone symposium](/photos/picktacular-team.jpg)
+[![Our Picktacular poster from the 2026 Management Engineering capstone symposium](/photos/picktacular-poster-board.jpg)](/photos/picktacular-poster-board.jpg)
 
 ## How it landed
 
