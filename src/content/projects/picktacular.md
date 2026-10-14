@@ -13,7 +13,7 @@ stats:
 links:
   - { label: "UWaterloo Health AI Lab article", href: "https://uwaterloo.ca/health-ai-analytics-lab/news/picktacular-adaptive-decision-support-operating-room" }
   - { label: "Cambridge Memorial Hospital news", href: "https://cmh.org/node/408" }
-cover: "/photos/picktacular-poster.jpg"
+cover: "/photos/picktacular-poster-board.jpg"
 order: 1
 ---
 
