@@ -11,6 +11,4 @@ todo: "Fill in: start month, what Order Editing owns, what you're working on. Ch
 
 ## The job
 
-I'm back at Shopify full-time, now on the Order Editing team. It owns how merchants change an order after it's been placed.
-
-More here soon.
+Back at Shopify full-time on Order Editing, the team that owns how merchants change an order after it's been placed.

@@ -41,11 +41,11 @@ I designed and built the algorithm that decides which swaps to show first. That'
 
 - **Features.** For each candidate pair (two items in the same category on different surgeons' lists for the same surgery) I compute eight signals: text overlap, matching gauge and size numbers, price ratio, how many surgeons use each item, and how often they appear in the same contexts. I started from 23 candidates and cut them down with a redundancy filter, then greedy forward selection. The selected set reaches an **AUC of 0.92**.
 - **Learning from every decision.** Ranking uses **Linear Thompson Sampling**, with a separate Bayesian model per supply category. What makes two sutures swappable (gauge) is different from what makes two instruments swappable (description), and the per-category models learn that on their own. Every approve or reject updates that category's posterior and immediately re-ranks the remaining pairs.
-- **Strong from day one.** A warm-start prior makes the first ranking equal to a sensible equal-weighted score, so it never starts worse than a fixed heuristic, and only gets better with feedback.
+- **Warm start.** A warm-start prior makes the first ranking equal to a sensible equal-weighted score, so it never starts worse than a fixed heuristic, and only gets better with feedback.
 
 [![How the recommender works: eight features per candidate pair feed a per-category Bayesian model; each clinician decision updates it and re-ranks the rest](/photos/picktacular-thompson-sampling.png)](/photos/picktacular-thompson-sampling.png)
 
-- **Tested before trusting it.** In a simulation over 3,840 candidate pairs across 24 categories, its top five suggestions were right **37.7%** of the time, against **5.3%** for the simple overlap-based ranking we started with. That's roughly 7× more precise where reviewers look first.
+- **Evaluation.** In a simulation over 3,840 candidate pairs across 24 categories, its top five suggestions were right **37.7%** of the time, against **5.3%** for the simple overlap-based ranking we started with. That's roughly 7× more precise where reviewers look first.
 
 [![Our Picktacular poster from the 2026 Management Engineering capstone symposium](/photos/picktacular-poster-board.jpg)](/photos/picktacular-poster-board.jpg)
 

@@ -16,8 +16,4 @@ Fuzion was the only AV provider at Grand Cinnamon Banquet Halls, so every event 
 ## What I did
 
 - **Setup.** Worked with other AV teams and event hosts to get equipment set up and connected before each function.
-- **Running the show.** Operated lighting and video systems live during events of over **1,300** people.
-
-## What mattered
-
-Live events don't have a retry button. Everything has to be tested before the doors open, because once 1,300 people are in the room you fix problems without anyone noticing. It went well with running my high school's AV team at the same time.
+- **Live operation.** Operated lighting and video systems live during events of over **1,300** people.

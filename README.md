@@ -17,8 +17,8 @@ npm run build    # production build into dist/
 
 | What | Where |
 |---|---|
-| Name, bio, "Now" line, photos, socials, resume link | `src/data/site.ts` |
-| Reading list and cooking photos (misc page) | `src/data/site.ts` |
+| Name, bio, "Now" line, photos, socials, resume link | `src/data/home.json` (or `/admin`) |
+| Clubs page | `src/data/clubs.json` (or `/admin`) |
 | A job | `src/content/work/<name>.md`, one file per job |
 | A project | `src/content/projects/<name>.md`, one file per project |
 | Colours, fonts, spacing | `src/styles/global.css` |

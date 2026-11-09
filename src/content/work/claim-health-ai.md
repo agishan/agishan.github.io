@@ -15,10 +15,6 @@ Claim Health AI is a Y Combinator (P25) startup working on healthcare insurance 
 
 ## What I did
 
-- **Rebuilt where analytics lived.** The customer dashboards were slow because analytical queries were running on the transactional database. I led the design and build of a ClickHouse warehouse on a One Big Table model and moved the analytics onto it. Page loads dropped by **70%**.
-- **Rebuilt the analytics product with the customers.** I reworked the customer-facing analytics suite around how clients actually run their operations, iterating directly with key accounts.
-- **Built the evaluation loop for document extraction.** A pipeline flags PDFs the extractor got wrong, re-runs them through a recursive LLM pass, and saves the corrected output. Every failure becomes another test case for the next version of the extractor.
-
-## What mattered
-
-The speed-up was a symptom. The real problem was that the system was built for writing data, not reading it. Fixing the architecture once beat tuning queries forever. And at five engineers, the people asking for a feature were often the same people using it the next day.
+- **Analytics warehouse.** The customer dashboards were slow because analytical queries were running on the transactional database. I led the design and build of a ClickHouse warehouse on a One Big Table model and moved the analytics onto it. Page loads dropped by **70%**.
+- **Customer analytics.** I reworked the customer-facing analytics suite around how clients run their operations, iterating directly with key accounts.
+- **Extraction evals.** A pipeline flags PDFs the extractor got wrong, re-runs them through a recursive LLM pass, and saves the corrected output. Every failure becomes another test case for the next version of the extractor.
