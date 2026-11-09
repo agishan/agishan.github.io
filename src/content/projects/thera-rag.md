@@ -13,7 +13,6 @@ stats:
 links:
   - { label: "GitHub", href: "https://github.com/agishan/Thera-RAG" }
 order: 2
-todo: "ResumeRepo marks these figures needs-confirmation. Check 85% / 8 / 115 and the year."
 ---
 
 ## The problem

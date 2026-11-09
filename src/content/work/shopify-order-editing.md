@@ -6,6 +6,7 @@ where: "Toronto, ON"
 summary: "Full-time on the Order Editing team."
 tools: []
 order: 0
+page: false # listed but not clickable; set to true once the page has real content
 todo: "Fill in: start month, what Order Editing owns, what you're working on. Check 'Toronto, ON'."
 ---
 

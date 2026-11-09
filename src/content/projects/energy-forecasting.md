@@ -9,5 +9,6 @@ stats:
 links:
   - { label: "GitHub", href: "https://github.com/agishan/EnergyConsumption" }
 order: 6
+draft: true
 page: false # listed but not clickable; set to true once it has a write-up below
 ---

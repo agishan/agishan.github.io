@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
-  const jobs = (await getCollection("work", (j) => !j.data.draft)).sort((a, b) => a.data.order - b.data.order);
+  const jobs = (await getCollection("work", (j) => !j.data.draft && j.data.page)).sort((a, b) => a.data.order - b.data.order);
   return jobs.map((job, i) => ({
     params: { slug: job.id },
     props: { job, prev: jobs[i - 1], next: jobs[i + 1] },

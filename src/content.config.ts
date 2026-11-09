@@ -14,6 +14,7 @@ const work = defineCollection({
     summary: z.string(), // the one line on the work list
     tools: z.array(z.string()).default([]),
     order: z.number(), // lower = higher on the list (newest first)
+    page: z.boolean().default(true), // false lists it without a clickable page
     draft: z.boolean().default(false), // true hides it from the site
     todo: z.string().optional(), // private notes to self; never shown on the site
   }),
