@@ -43,6 +43,11 @@
   "resume": "",
   "socials": [
     {
+      "label": "Email",
+      "href": "mailto:agishant@gmail.com",
+      "hidden": false
+    },
+    {
       "label": "GitHub",
       "href": "https://github.com/Agishan",
       "hidden": false
